@@ -1,0 +1,59 @@
+
+serverIp: 121.36.166.92
+databasePort: 3306
+databaseName: seestech
+
+server:
+  port: 2002
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1001/eureka/
+
+spring:
+  application:
+    name: eureka-client
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://${serverIp}:${databasePort}/${databaseName}?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+    username: root
+    password: waitme8165
+
+    initialSize: 1
+    minIdle: 1
+    maxActive: 50
+
+    maxWait: 180000
+
+    timeBetweenEvictionRunsMillis: 60000
+
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat,wall
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*Mapper.xml
+
+  typeAliasesPackage: com.seestech.model
+  global-config:
+
+    db-config:
+      id-type: ID_WORKER
+      field-strategy: NOT_NULL
+      column-underline: true
+      logic-delete-value: -1
+      logic-not-delete-value: 0
+    banner: false
+
+

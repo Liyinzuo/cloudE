@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: eureka-zuul
+
+server:
+  port: 1006
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka/
+
+zuul:
+  routes:
+    api-a:
+      path: /api/ribbon/**
+      serviceId: eureka-ribbon
+    api-b:
+      path: /api/feign/**
+      serviceId: eureka-feign
+    api-c:
+      path: /api/client/**
+      serviceId: eureka-client
+  ## 不填则不拦截请求头 默认是过滤掉了Cookie Set-Cookie Authorization
+  sensitive-headers:
+  ## 重定向
+  add-proxy-headers: true

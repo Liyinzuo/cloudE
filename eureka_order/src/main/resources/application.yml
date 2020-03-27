@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: eureka-order
+
+server:
+  port: 3002
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://121.36.166.92:1001/eureka
