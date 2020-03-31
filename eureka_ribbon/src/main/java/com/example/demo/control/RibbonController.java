@@ -17,8 +17,7 @@ public class RibbonController {
     @Resource
     private EurekaRibbonService ribbonService;
 
-    @Value("${foo}")
-    private String foo;
+    private String foo = "ribbon";
 
     @GetMapping("/ribbonX")
     public String ribbonX() {

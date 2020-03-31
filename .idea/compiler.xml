@@ -6,13 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="eureka-common" />
+        <module name="eureka_config_server" />
         <module name="eureka_server" />
-        <module name="eureka_client" />
         <module name="eureka_order" />
         <module name="eureka_feign" />
-        <module name="eureka_config_server" />
         <module name="eureka_config_client" />
+        <module name="eureka-common" />
+        <module name="eureka_client" />
         <module name="eureka_zuul" />
         <module name="eureka_ribbon" />
       </profile>

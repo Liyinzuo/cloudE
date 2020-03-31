@@ -11,5 +11,6 @@ ribbon:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://121.36.166.92:1001/eureka/
+      defaultZone: http://localhost:1001/eureka/
+      ##http://121.36.166.92:1001/eureka/
 
