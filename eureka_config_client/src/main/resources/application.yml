@@ -4,9 +4,12 @@ spring:
   cloud:
     config:
       uri: http://localhost:8888/
+      ## 配置名称
       name: config-client
+      ## 分支
       label: master
-      profile: dev
+      ## 后缀
+      profile: prod
 
 server:
   port: 8889

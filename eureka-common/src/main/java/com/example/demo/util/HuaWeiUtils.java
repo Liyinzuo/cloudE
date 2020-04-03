@@ -22,12 +22,7 @@ public class HuaWeiUtils {
     public static ObsClient initObs(String buckName) {
         ObsClient obsClient = new ObsClient(Constant.HuaWei_Access_Key_Id, Constant.HuaWei_Secret_Access_Key, Constant.endPoint);
         //桶名称 存储上一级目录名称 buckName下可存放多个文件
-        String location = obsClient.getBucketLocation(buckName);
-        if (location.equals("") || StringUtils.isBlank(location)) {
-            ObsBucket bucket = new ObsBucket();
-            bucket.setBucketName(buckName);
-            obsClient.createBucket(bucket);
-        }
+
         return obsClient;
     }
 
